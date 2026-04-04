@@ -1,0 +1,54 @@
+.register-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.875rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.register-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.register-filter-label {
+  font-size: 0.72rem;
+  color: var(--text3);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.register-filter-select {
+  min-width: 190px;
+  padding: 0.65rem 0.875rem;
+  font-size: 0.875rem;
+  color: var(--text);
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-input);
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.register-filter-select:focus {
+  border-color: var(--accent);
+}
+
+.register-scope {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.register-hint {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--text3);
+  font-weight: 400;
+}

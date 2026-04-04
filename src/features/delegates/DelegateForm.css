@@ -1,0 +1,40 @@
+.delegate-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 500px;
+}
+
+.delegate-form-label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text2);
+}
+
+.delegate-form-select {
+  padding: 0.65rem 0.875rem;
+  font-size: 0.9rem;
+  color: var(--text);
+  background: var(--bg3);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius-input);
+  transition: border-color 0.15s ease;
+  outline: none;
+}
+
+.delegate-form-select:focus {
+  border-color: var(--accent);
+}
+
+.delegate-form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  margin-top: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}

@@ -1,0 +1,99 @@
+.account-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 900px) {
+  .account-grid {
+    grid-template-columns: 1fr 1.2fr;
+    align-items: start;
+  }
+}
+
+.account-section-title {
+  margin: 0 0 1.25rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid var(--border);
+  letter-spacing: -0.01em;
+}
+
+.account-dl {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: var(--bg3);
+  padding: 1.25rem;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--border);
+}
+
+.account-dl dt {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text3);
+}
+
+.account-dl dd {
+  margin: 0.2rem 0 0;
+  font-size: 0.9375rem;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.account-pw-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  background: var(--bg3);
+  padding: 1.25rem;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--border);
+}
+
+.account-strength {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.account-strength-bar {
+  flex: 1;
+  height: 5px;
+  background: var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.account-strength-fill {
+  height: 100%;
+  transition: width 0.3s ease;
+  border-radius: 3px;
+}
+
+.account-strength-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  min-width: 3.5rem;
+  text-align: right;
+  color: var(--text2);
+}
+
+.account-msg {
+  margin: 0;
+  font-size: 0.8125rem;
+  padding: 0.65rem 0.875rem;
+  border-radius: var(--radius-input);
+  font-weight: 500;
+}
+
+.account-msg--ok {
+  background: var(--green-bg);
+  color: var(--green);
+  border: 1px solid rgba(62, 207, 142, 0.25);
+}

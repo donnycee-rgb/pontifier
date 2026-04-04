@@ -1,0 +1,48 @@
+.ui-table-scroll {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+}
+
+.ui-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  background: var(--bg2);
+}
+
+.ui-table th,
+.ui-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+
+.ui-table th {
+  background: var(--bg3);
+  color: var(--text2);
+  font-weight: 600;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.ui-table tbody tr {
+  transition: background 0.12s ease;
+}
+
+.ui-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.ui-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.ui-table--striped tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.02);
+}

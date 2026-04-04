@@ -1,0 +1,80 @@
+.team-card {
+  border-radius: var(--radius-panel);
+  transition: border-color 0.15s ease;
+}
+
+.team-card:hover {
+  border-color: var(--border2);
+}
+
+.team-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  padding-bottom: 0.875rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.team-card-name {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.team-card-email {
+  margin: 0.35rem 0 0;
+  font-size: 0.8rem;
+  color: var(--text2);
+  font-weight: 400;
+}
+
+.team-card-meta {
+  margin-top: 0.875rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.team-card-college {
+  font-size: 0.75rem;
+  color: var(--accent);
+  font-weight: 600;
+  padding: 0.25rem 0.625rem;
+  background: rgba(201, 168, 76, 0.1);
+  border-radius: 20px;
+  border: 1px solid rgba(201, 168, 76, 0.2);
+}
+
+.team-card-stats {
+  margin: 1.25rem 0 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.875rem;
+}
+
+.team-card-stats dt {
+  margin: 0;
+  font-size: 0.6875rem;
+  color: var(--text3);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+}
+
+.team-card-stats dd {
+  margin: 0.35rem 0 0;
+  font-family: var(--mono);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.team-card-deactivate {
+  margin-top: 1.25rem;
+  width: 100%;
+  padding: 0.65rem;
+  font-weight: 600;
+}

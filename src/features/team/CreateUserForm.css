@@ -1,0 +1,72 @@
+.create-user-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 480px;
+}
+
+.create-user-label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text2);
+}
+
+.create-user-select {
+  padding: 0.65rem 0.875rem;
+  font-size: 0.9rem;
+  color: var(--text);
+  background: var(--bg3);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius-input);
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.create-user-select:focus {
+  border-color: var(--accent);
+}
+
+.create-user-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  margin-top: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.create-user-done-title {
+  margin: 0 0 0.5rem;
+  font-weight: 700;
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.create-user-done-text {
+  margin: 0 0 1rem;
+  font-size: 0.875rem;
+  color: var(--text2);
+  line-height: 1.6;
+}
+
+.create-user-pw {
+  margin-bottom: 1.25rem;
+  padding: 0.875rem 1rem;
+  background: var(--bg3);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius-input);
+  font-size: 0.9375rem;
+  color: var(--accent2);
+  word-break: break-all;
+  font-family: var(--mono);
+  font-weight: 500;
+  transition: border-color 0.15s ease;
+}
+
+.create-user-pw:hover {
+  border-color: rgba(201, 168, 76, 0.35);
+}

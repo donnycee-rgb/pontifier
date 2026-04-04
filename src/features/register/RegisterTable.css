@@ -1,0 +1,104 @@
+.register-table-wrap {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-panel);
+  background: var(--bg2);
+  overflow: hidden;
+}
+
+.register-table {
+  border-collapse: separate;
+  border-spacing: 0;
+  min-width: max-content;
+}
+
+.register-table th,
+.register-table td {
+  padding: 0;
+  vertical-align: middle;
+}
+
+.register-table-date-head {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--text2);
+  text-align: center;
+  min-width: 140px;
+  padding: 0.65rem 0.5rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg3);
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.register-table-name-head {
+  min-width: 240px;
+  padding: 0.75rem 1rem;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text2);
+  font-weight: 700;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg3);
+  position: sticky;
+  left: 0;
+  z-index: 10;
+}
+
+.register-table-sticky {
+  position: sticky;
+  left: 0;
+  z-index: 8;
+  background: var(--bg2);
+  box-shadow: 4px 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.register-table-name {
+  padding: 0.75rem 1rem;
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+}
+
+.register-name-row {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  flex-wrap: wrap;
+}
+
+.register-name-text {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.register-name-meta {
+  margin-top: 0.2rem;
+  font-size: 0.6875rem;
+  color: var(--text3);
+  font-weight: 400;
+}
+
+.register-table-cell {
+  padding: 0;
+  border-bottom: 1px solid var(--border);
+  min-height: 68px;
+}
+
+.register-table-cell:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.register-today-pill {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 0.625rem;
+  font-weight: 700;
+  background: rgba(201, 168, 76, 0.12);
+  color: var(--accent);
+  padding: 0.2rem 0.5rem;
+  border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}

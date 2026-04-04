@@ -1,0 +1,122 @@
+.chart-card-title {
+  margin: 0 0 1rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.chart-card-body {
+  width: 100%;
+  height: 280px;
+  border-radius: var(--radius-input);
+  overflow: hidden;
+}
+
+.chart-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.875rem;
+  margin-top: 1rem;
+  padding-top: 0.875rem;
+  border-top: 1px solid var(--border);
+}
+
+.chart-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--text2);
+}
+
+.chart-legend-color {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+}
+
+/* Donut */
+.chart-donut-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.chart-donut-chart {
+  position: relative;
+  flex: 0 0 200px;
+}
+
+.chart-donut-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.chart-donut-total {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text);
+  font-family: var(--mono);
+  line-height: 1;
+}
+
+.chart-donut-label {
+  font-size: 0.7rem;
+  color: var(--text3);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: 0.2rem;
+}
+
+.chart-donut-legend {
+  flex: 1;
+  min-width: 140px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.chart-donut-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+}
+
+.chart-donut-legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.chart-donut-legend-name {
+  flex: 1;
+  color: var(--text2);
+  font-weight: 500;
+}
+
+.chart-donut-legend-val {
+  color: var(--text);
+  font-weight: 600;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  min-width: 2rem;
+  text-align: right;
+}
+
+.chart-donut-legend-pct {
+  color: var(--text3);
+  font-size: 0.75rem;
+  min-width: 2.5rem;
+  text-align: right;
+}

@@ -1,0 +1,29 @@
+.dashboard-grid {
+  margin-top: 1.25rem;
+  display: grid;
+  gap: 1.25rem;
+}
+
+@media (min-width: 1024px) {
+  .dashboard-grid {
+    grid-template-columns: 1.5fr 1fr;
+    align-items: start;
+  }
+}
+
+.dashboard-grid-bottom {
+  margin-top: 1.25rem;
+  display: grid;
+  gap: 1.25rem;
+}
+
+@media (min-width: 1024px) {
+  .dashboard-grid-bottom {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+.dashboard-recent {
+  margin-top: 1.25rem;
+}

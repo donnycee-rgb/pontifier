@@ -1,0 +1,14 @@
+.app-main--with-sidebar {
+  margin-left: 0;
+}
+
+@media (min-width: 768px) {
+  .app-main--with-sidebar {
+    margin-left: var(--sidebar-width);
+  }
+}
+
+.app-shell--full {
+  min-height: 100vh;
+  background: var(--bg);
+}
