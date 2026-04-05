@@ -22,9 +22,12 @@ export function DelegateList({ rows, onRowClick }) {
     <Table>
       <thead>
         <tr>
+          <th>#</th>
           <th>Reg No.</th>
           <th>Name</th>
           <th>College</th>
+          <th>School</th>
+          <th>Department</th>
           <th>Contact</th>
           <th>Status</th>
           <th>Team member</th>
@@ -32,11 +35,14 @@ export function DelegateList({ rows, onRowClick }) {
         </tr>
       </thead>
       <tbody>
-        {rows.map((d) => (
+        {rows.map((d, index) => (
           <tr key={d.id} className="delegate-list-row" onClick={() => onRowClick(d)}>
+            <td className="mono" style={{ fontSize: "0.75rem", color: "#aaa" }}>{index + 1}</td>
             <td className="mono" style={{ fontSize: "0.75rem", color: "#aaa" }}>{d.reg_number || "—"}</td>
             <td className="delegate-list-name">{d.name}</td>
             <td className="mono">{d.college_code || d.college_name}</td>
+            <td className="mono" style={{ fontSize: "0.8rem" }}>{d.school_code || "—"}</td>
+            <td style={{ fontSize: "0.8rem" }}>{d.department_name || "—"}</td>
             <td className="mono delegate-list-phone">{d.contact || "—"}</td>
             <td>
               <Badge variant={statusVariant(d.status)}>{delegateStatusLabel(d.status)}</Badge>

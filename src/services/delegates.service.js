@@ -73,3 +73,15 @@ export async function downloadDelegateTemplate() {
   a.click();
   URL.revokeObjectURL(url);
 }
+
+export async function fetchSchools(collegeId = null) {
+  const params = collegeId ? { college_id: collegeId } : {};
+  const res = await api.get("/schools", { params });
+  return unwrap(res);
+}
+
+export async function fetchDepartments(schoolId = null) {
+  const params = schoolId ? { school_id: schoolId } : {};
+  const res = await api.get("/departments", { params });
+  return unwrap(res);
+}
