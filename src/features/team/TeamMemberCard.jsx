@@ -2,7 +2,7 @@ import { Badge } from "../../components/ui/Badge";
 import { Button } from "../../components/ui/Button";
 import "./TeamMemberCard.css";
 
-export function TeamMemberCard({ member, currentUserId, onDeactivate, onActivate }) {
+export function TeamMemberCard({ member, currentUserId, onDeactivate, onActivate, onDelete }) {
   const isSelf = member.id === currentUserId;
   const collegeLabel = member.college_code || member.college_name || member.college;
 
@@ -13,7 +13,9 @@ export function TeamMemberCard({ member, currentUserId, onDeactivate, onActivate
           <h3 className="team-card-name">{member.name}</h3>
           <p className="team-card-email mono">{member.email}</p>
         </div>
-        <Badge variant={member.is_active ? "success" : "danger"}>{member.is_active ? "Active" : "Inactive"}</Badge>
+        <Badge variant={member.is_active ? "success" : "danger"}>
+          {member.is_active ? "Active" : "Inactive"}
+        </Badge>
       </div>
       <div className="team-card-meta">
         <Badge variant="accent">{String(member.role).replace("_", " ")}</Badge>
@@ -33,16 +35,30 @@ export function TeamMemberCard({ member, currentUserId, onDeactivate, onActivate
           <dd>{member.delegates_contacted_this_week ?? 0}</dd>
         </div>
       </dl>
-      {member.is_active && !isSelf ? (
-        <Button variant="danger" type="button" className="team-card-deactivate" onClick={() => onDeactivate(member.id)}>
-          Deactivate account
-        </Button>
-      ) : null}
-      {!member.is_active ? (
-        <Button type="button" className="team-card-deactivate" onClick={() => onActivate(member.id)}>
-          Activate account
-        </Button>
-      ) : null}
+      <div className="team-card-actions">
+        {member.is_active && !isSelf ? (
+          <Button variant="danger" type="button" className="team-card-deactivate"
+            onClick={() => onDeactivate(member.id)}>
+            Deactivate
+          </Button>
+        ) : null}
+        {!member.is_active ? (
+          <Button type="button" className="team-card-deactivate"
+            onClick={() => onActivate(member.id)}>
+            Activate
+          </Button>
+        ) : null}
+        {!isSelf ? (
+          <Button variant="danger" type="button" className="team-card-deactivate"
+            onClick={() => {
+              if (window.confirm(`Delete ${member.name}? This cannot be undone.`)) {
+                onDelete(member.id);
+              }
+            }}>
+            Delete account
+          </Button>
+        ) : null}
+      </div>
     </article>
   );
 }

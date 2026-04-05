@@ -30,3 +30,7 @@ export async function fetchUserById(id) {
   const res = await api.get(`/users/${id}`);
   return unwrap(res);
 }
+export async function deleteUser(id) {
+  const res = await api.delete(`/users/${id}`);
+  return unwrap(res);
+}

@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 import { useAuth } from "../auth/AuthContext";
-import { fetchUsers, deactivateUser, activateUser } from "../../services/users.service.js";
+import { fetchUsers, deactivateUser, activateUser, deleteUser } from "../../services/users.service.js";
 import { TeamMemberCard } from "./TeamMemberCard";
 import { CreateUserForm } from "./CreateUserForm";
 import { Modal } from "../../components/ui/Modal";
@@ -54,6 +54,15 @@ export function TeamPage() {
     }
   }
 
+  async function onDelete(id) {
+    try {
+      await deleteUser(id);
+      await load();
+    } catch (e) {
+      setError(e.message || "Delete failed");
+    }
+  }
+
   function onCreated() {
     load();
   }
@@ -82,6 +91,7 @@ export function TeamPage() {
               currentUserId={user?.id}
               onDeactivate={onDeactivate}
               onActivate={onActivate}
+              onDelete={onDelete}
             />
           ))}
         </div>

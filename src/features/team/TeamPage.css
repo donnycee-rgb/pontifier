@@ -42,3 +42,9 @@
   margin: 0 0 0.4rem;
   color: var(--text2);
 }
+.team-card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  margin-top: 1.25rem;
+}
