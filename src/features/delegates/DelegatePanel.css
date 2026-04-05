@@ -99,3 +99,25 @@
   padding-top: 1rem;
   border-top: 1px solid var(--border);
 }
+.delegate-panel-breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin: 0.5rem 0 0.75rem;
+  font-size: 0.8rem;
+}
+
+.delegate-panel-breadcrumb-item {
+  color: var(--text2);
+}
+
+.delegate-panel-breadcrumb-sep {
+  color: var(--text3);
+  font-size: 0.75rem;
+}
+
+.delegate-panel-breadcrumb-dept {
+  color: var(--accent);
+  font-weight: 600;
+}

@@ -53,9 +53,7 @@ export function DelegatePanel({ open, onClose, delegateSummary, user, onUpdated 
         if (!cancelled) setLoading(false);
       }
     })();
-    return () => {
-      cancelled = true;
-    };
+    return () => { cancelled = true; };
   }, [open, delegateSummary?.id, user?.role]);
 
   const delegate = detail?.delegate;
@@ -92,11 +90,43 @@ export function DelegatePanel({ open, onClose, delegateSummary, user, onUpdated 
       {error ? <p className="change-pw-error">{error}</p> : null}
       {delegate ? (
         <div className="delegate-panel">
+
+          {/* Status + College badges */}
           <div className="delegate-panel-row">
             <Badge variant="accent">{delegateSummary.college_name || delegate.college_name}</Badge>
             <Badge variant={statusVariant(delegate.status)}>{delegateStatusLabel(delegate.status)}</Badge>
           </div>
+
+          {/* Academic breadcrumb: College → School → Department */}
+          <div className="delegate-panel-breadcrumb">
+            <span className="delegate-panel-breadcrumb-item">
+              {delegate.college_name || delegateSummary.college_name || "—"}
+            </span>
+            {delegate.school_name && (
+              <>
+                <span className="delegate-panel-breadcrumb-sep">›</span>
+                <span className="delegate-panel-breadcrumb-item">{delegate.school_name}</span>
+              </>
+            )}
+            {delegate.department_name && (
+              <>
+                <span className="delegate-panel-breadcrumb-sep">›</span>
+                <span className="delegate-panel-breadcrumb-item delegate-panel-breadcrumb-dept">
+                  {delegate.department_name}
+                </span>
+              </>
+            )}
+          </div>
+
+          {/* Reg number */}
+          {delegate.reg_number && (
+            <p className="delegate-panel-meta">
+              Reg No: <span className="mono">{delegate.reg_number}</span>
+            </p>
+          )}
+
           <p className="delegate-panel-phone mono">{delegate.contact || "—"}</p>
+
           <p className="delegate-panel-meta">
             Assigned:{" "}
             <span className="mono">
@@ -106,7 +136,9 @@ export function DelegatePanel({ open, onClose, delegateSummary, user, onUpdated 
           <p className="delegate-panel-meta">
             Last contacted:{" "}
             <span className="mono">
-              {delegateSummary.last_contact_date ? formatDateOnly(delegateSummary.last_contact_date) : "—"}
+              {delegateSummary.last_contact_date
+                ? formatDateOnly(delegateSummary.last_contact_date)
+                : "—"}
             </span>
           </p>
 
@@ -119,9 +151,7 @@ export function DelegatePanel({ open, onClose, delegateSummary, user, onUpdated 
               rows={3}
               value={note}
               onChange={(e) => setNote(e.target.value)}
-              onBlur={() => {
-                saveNotes().catch(() => {});
-              }}
+              onBlur={() => { saveNotes().catch(() => {}); }}
             />
           </div>
 
@@ -129,11 +159,13 @@ export function DelegatePanel({ open, onClose, delegateSummary, user, onUpdated 
             <div className="delegate-panel-edit">
               <label className="delegate-panel-notes-label">Update status</label>
               <div className="delegate-panel-edit-row">
-                <select className="delegate-panel-select" value={status} onChange={(e) => setStatus(e.target.value)}>
+                <select
+                  className="delegate-panel-select"
+                  value={status}
+                  onChange={(e) => setStatus(e.target.value)}
+                >
                   {delegateStatusOptions().map((o) => (
-                    <option key={o.value} value={o.value}>
-                      {o.label}
-                    </option>
+                    <option key={o.value} value={o.value}>{o.label}</option>
                   ))}
                 </select>
                 <Button type="button" onClick={() => saveStatus().catch((e) => setError(e.message))}>
@@ -147,15 +179,21 @@ export function DelegatePanel({ open, onClose, delegateSummary, user, onUpdated 
             <div className="delegate-panel-edit">
               <label className="delegate-panel-notes-label">Assign to team member</label>
               <div className="delegate-panel-edit-row">
-                <select className="delegate-panel-select" value={assignTo} onChange={(e) => setAssignTo(e.target.value)}>
+                <select
+                  className="delegate-panel-select"
+                  value={assignTo}
+                  onChange={(e) => setAssignTo(e.target.value)}
+                >
                   <option value="">Select member</option>
                   {teamMembers.map((m) => (
-                    <option key={m.id} value={m.id}>
-                      {m.name}
-                    </option>
+                    <option key={m.id} value={m.id}>{m.name}</option>
                   ))}
                 </select>
-                <Button type="button" variant="secondary" onClick={() => saveAssign().catch((e) => setError(e.message))}>
+                <Button
+                  type="button"
+                  variant="secondary"
+                  onClick={() => saveAssign().catch((e) => setError(e.message))}
+                >
                   Assign
                 </Button>
               </div>
