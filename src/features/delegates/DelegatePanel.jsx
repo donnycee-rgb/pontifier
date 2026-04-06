@@ -23,7 +23,7 @@ function statusVariant(s) {
 
 export function DelegatePanel({ open, onClose, delegateSummary, user, onUpdated }) {
   const [detail, setDetail] = useState(null);
-  const [teamMembers, setTeamMembers] = useState([]);
+  const [allUsers, setAllUsers] = useState([]);
   const [note, setNote] = useState("");
   const [status, setStatus] = useState("");
   const [assignTo, setAssignTo] = useState("");
@@ -44,8 +44,9 @@ export function DelegatePanel({ open, onClose, delegateSummary, user, onUpdated 
         setStatus(data.delegate?.status || "");
         setAssignTo("");
         if (user?.role === "admin") {
-          const udata = await fetchUsers({ role: "team_member", is_active: "true" });
-          if (!cancelled) setTeamMembers(udata.users || []);
+          // Fetch ALL active users — not just team members
+          const udata = await fetchUsers({ is_active: "true" });
+          if (!cancelled) setAllUsers(udata.users || []);
         }
       } catch (e) {
         if (!cancelled) setError(e.message || "Failed to load delegate");
@@ -177,16 +178,18 @@ export function DelegatePanel({ open, onClose, delegateSummary, user, onUpdated 
 
           {isAdmin ? (
             <div className="delegate-panel-edit">
-              <label className="delegate-panel-notes-label">Assign to team member</label>
+              <label className="delegate-panel-notes-label">Assign to user</label>
               <div className="delegate-panel-edit-row">
                 <select
                   className="delegate-panel-select"
                   value={assignTo}
                   onChange={(e) => setAssignTo(e.target.value)}
                 >
-                  <option value="">Select member</option>
-                  {teamMembers.map((m) => (
-                    <option key={m.id} value={m.id}>{m.name}</option>
+                  <option value="">Select user</option>
+                  {allUsers.map((m) => (
+                    <option key={m.id} value={m.id}>
+                      {m.name} ({m.role})
+                    </option>
                   ))}
                 </select>
                 <Button
