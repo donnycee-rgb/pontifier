@@ -8,6 +8,7 @@ import { RegisterPage } from "./features/register/RegisterPage";
 import { DelegatesPage } from "./features/delegates/DelegatesPage";
 import { TeamPage } from "./features/team/TeamPage";
 import { AccountPage } from "./features/account/AccountPage";
+import { AnalyticsPage } from "./features/analytics/AnalyticsPage";
 
 function App() {
   return (
@@ -17,12 +18,8 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route element={<ProtectedLayout />}>
             <Route path="/change-password" element={<ChangePasswordPage />} />
-            <Route
-              path="/dashboard"
-              element={
-                <DashboardPage />
-              }
-            />
+            <Route path="/dashboard" element={<DashboardPage />} />
+            <Route path="/analytics" element={<AnalyticsPage />} />
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/delegates" element={<DelegatesPage />} />
             <Route path="/team" element={<TeamPage />} />

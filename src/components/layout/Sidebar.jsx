@@ -6,6 +6,7 @@ import {
   UserCog,
   UserCircle,
   LogOut,
+  BarChart2,
 } from "lucide-react";
 import { useAuth } from "../../features/auth/AuthContext";
 import { Badge } from "../ui/Badge";
@@ -20,10 +21,17 @@ export function Sidebar({ mobileOpen, onCloseMobile }) {
 
   return (
     <>
-      {mobileOpen ? <button type="button" className="sidebar-overlay" aria-label="Close menu" onClick={onCloseMobile} /> : null}
+      {mobileOpen ? (
+        <button
+          type="button"
+          className="sidebar-overlay"
+          aria-label="Close menu"
+          onClick={onCloseMobile}
+        />
+      ) : null}
       <aside className={`sidebar ${mobileOpen ? "sidebar--open" : ""}`}>
         <div className="sidebar-brand">
-          <div className="sidebar-brand-title">Campaign HQ</div>
+          <div className="sidebar-brand-title">Pontifex</div>
           <div className="sidebar-brand-slogan mono">Arete in Action</div>
         </div>
 
@@ -34,6 +42,14 @@ export function Sidebar({ mobileOpen, onCloseMobile }) {
               <span>Dashboard</span>
             </NavLink>
           ) : null}
+
+          {isAdmin ? (
+            <NavLink to="/analytics" className={linkClass} onClick={onCloseMobile}>
+              <BarChart2 size={18} />
+              <span>Analytics</span>
+            </NavLink>
+          ) : null}
+
           <NavLink to="/register" className={linkClass} onClick={onCloseMobile}>
             <ClipboardList size={18} />
             <span>Register</span>
