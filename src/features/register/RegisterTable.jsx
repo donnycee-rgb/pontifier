@@ -21,14 +21,18 @@ export function RegisterTable({
   readOnly,
 }) {
   return (
-    <div className="register-table-wrap scroll-x">
+    <div className="register-table-wrap">
       <table className="register-table">
         <thead>
           <tr>
-            <th className="register-table-sticky register-table-name-head">Delegate</th>
+            <th className="register-table-sticky register-table-name-head">
+              Delegate
+            </th>
             {dates.map((d) => (
               <th key={d} className="register-table-date-head mono">
-                {d === todayStr ? <span className="register-today-pill">Today</span> : null}
+                {d === todayStr ? (
+                  <span className="register-today-pill">Today</span>
+                ) : null}
                 {formatDateOnly(d)}
               </th>
             ))}
@@ -39,7 +43,9 @@ export function RegisterTable({
             <tr key={del.id}>
               <td className="register-table-sticky register-table-name">
                 <div className="register-name-row">
-                  <Badge variant={statusVariant(del.status)}>{delegateStatusLabel(del.status)}</Badge>
+                  <Badge variant={statusVariant(del.status)}>
+                    {delegateStatusLabel(del.status)}
+                  </Badge>
                   <span className="register-name-text">{del.name}</span>
                 </div>
                 <div className="register-name-meta mono">{del.college}</div>
@@ -60,7 +66,9 @@ export function RegisterTable({
                       myEntry={myEntry}
                       pendingTick={pendingByDelegate[del.id]}
                       onRequestTick={() => onRequestTick(del.id)}
-                      onSelectOutcome={(outcome) => onSelectOutcome(del.id, outcome)}
+                      onSelectOutcome={(outcome) =>
+                        onSelectOutcome(del.id, outcome)
+                      }
                     />
                   </td>
                 );
