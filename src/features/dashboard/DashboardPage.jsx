@@ -7,6 +7,7 @@ import { ActivityChart } from "./ActivityChart";
 import { StatusDonut } from "./StatusDonut";
 import { TopCanvassers } from "./TopCanvassers";
 import { RecentActivity } from "./RecentActivity";
+import { CollegeTracker } from "./CollegeTracker";
 import {
   fetchDashboardStats,
   fetchCollegeBreakdown,
@@ -66,11 +67,18 @@ export function DashboardPage() {
       </p>
 
       {error ? <p className="login-error">{error}</p> : null}
-      {loading ? <p style={{ color: "var(--text3)", fontSize: "0.875rem" }}>Loading…</p> : null}
+      {loading ? (
+        <p style={{ color: "var(--text3)", fontSize: "0.875rem" }}>Loading…</p>
+      ) : null}
 
       {!loading && (
         <>
           <StatsRow stats={stats} />
+
+          {/* Target tracker — full width */}
+          <div style={{ marginTop: "1.25rem" }}>
+            <CollegeTracker colleges={colleges} />
+          </div>
 
           <div className="dashboard-grid">
             <CollegeChart colleges={colleges} />
