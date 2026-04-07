@@ -19,15 +19,13 @@ export function RegisterPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-  const todayStr = todayYmd();
-
   const load = useCallback(async () => {
     setLoading(true);
     setError("");
     try {
       const params = {};
       if (collegeFilter !== "all") params.college_id = collegeFilter;
-      params.date_from = todayStr;
+      params.date_from = todayYmd();
       const data = await fetchRegister(params);
       setDelegates(data.delegates || []);
       setDates(data.dates || []);
@@ -64,14 +62,16 @@ export function RegisterPage() {
   }, [token, load]);
 
   useEffect(() => {
+    let lastDay = todayYmd();
     const checkDayChange = setInterval(() => {
       const now = todayYmd();
-      if (now !== todayStr) {
+      if (now !== lastDay) {
+        lastDay = now;
         load();
       }
     }, 60000);
     return () => clearInterval(checkDayChange);
-  }, [todayStr, load]);
+  }, [load]);
 
   const onRequestTick = useCallback((delegateId) => {
     setPendingByDelegate((p) => ({ ...p, [delegateId]: true }));
@@ -79,10 +79,11 @@ export function RegisterPage() {
 
   const onSelectOutcome = useCallback(
     async (delegateId, outcome) => {
+      const today = todayYmd();
       try {
         await postRegisterEntry({
           delegate_id: delegateId,
-          contact_date: todayStr,
+          contact_date: today,
           was_contacted: true,
           outcome,
           notes: null,
@@ -102,7 +103,7 @@ export function RegisterPage() {
         });
       }
     },
-    [todayStr, load]
+    [load]
   );
 
   const showCollegeFilter = user?.role === "admin";
@@ -148,7 +149,7 @@ export function RegisterPage() {
       {!loading ? (
         <RegisterTable
           dates={dates}
-          todayStr={todayStr}
+          todayStr={todayYmd()}
           delegates={delegates}
           pendingByDelegate={pendingByDelegate}
           onRequestTick={onRequestTick}
