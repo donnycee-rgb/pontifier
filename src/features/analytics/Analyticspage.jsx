@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 import { useAuth } from "../auth/AuthContext.jsx";
 import { api } from "../../services/api.js";
-import "./AnalyticsPage.css";
+import "./analyticsPage.css";
 
 function unwrap(res) {
   const b = res.data;
