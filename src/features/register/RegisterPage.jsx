@@ -27,6 +27,7 @@ export function RegisterPage() {
     try {
       const params = {};
       if (collegeFilter !== "all") params.college_id = collegeFilter;
+      params.date_from = todayStr;
       const data = await fetchRegister(params);
       setDelegates(data.delegates || []);
       setDates(data.dates || []);
@@ -61,6 +62,16 @@ export function RegisterPage() {
       socket.disconnect();
     };
   }, [token, load]);
+
+  useEffect(() => {
+    const checkDayChange = setInterval(() => {
+      const now = todayYmd();
+      if (now !== todayStr) {
+        load();
+      }
+    }, 60000);
+    return () => clearInterval(checkDayChange);
+  }, [todayStr, load]);
 
   const onRequestTick = useCallback((delegateId) => {
     setPendingByDelegate((p) => ({ ...p, [delegateId]: true }));
