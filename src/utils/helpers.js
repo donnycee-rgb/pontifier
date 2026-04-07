@@ -25,9 +25,16 @@ export function formatDateOnly(isoOrYmd) {
 }
 
 export function todayYmd() {
-  const d = new Date();
-  d.setHours(0, 0, 0, 0);
-  return d.toISOString().slice(0, 10);
+  const now = new Date();
+  const kenya = new Date(
+    now.toLocaleString("en-US", { timeZone: "Africa/Nairobi" })
+  );
+
+  const y = kenya.getFullYear();
+  const m = String(kenya.getMonth() + 1).padStart(2, "0");
+  const d = String(kenya.getDate()).padStart(2, "0");
+
+  return `${y}-${m}-${d}`;
 }
 
 export function passwordStrength(password) {
