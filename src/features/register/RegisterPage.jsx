@@ -25,7 +25,6 @@ export function RegisterPage() {
     try {
       const params = {};
       if (collegeFilter !== "all") params.college_id = collegeFilter;
-      params.date_from = todayYmd();
       const data = await fetchRegister(params);
       setDelegates(data.delegates || []);
       setDates(data.dates || []);
