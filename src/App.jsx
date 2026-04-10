@@ -8,13 +8,15 @@ import { RegisterPage } from "./features/register/RegisterPage";
 import { DelegatesPage } from "./features/delegates/DelegatesPage";
 import { TeamPage } from "./features/team/TeamPage";
 import { AccountPage } from "./features/account/AccountPage";
-import { AnalyticsPage } from "./features/analytics/AnalyticsPage";
+import { AnalyticsPage } from "./features/analytics/Analyticspage";
+import { LandingPage } from "./features/landing/LandingPage";
 
 function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
         <Routes>
+          <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route element={<ProtectedLayout />}>
             <Route path="/change-password" element={<ChangePasswordPage />} />
@@ -25,8 +27,7 @@ function App() {
             <Route path="/team" element={<TeamPage />} />
             <Route path="/account" element={<AccountPage />} />
           </Route>
-          <Route path="/" element={<Navigate to="/login" replace />} />
-          <Route path="*" element={<Navigate to="/login" replace />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>
