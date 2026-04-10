@@ -8,7 +8,7 @@ import { RegisterPage } from "./features/register/RegisterPage";
 import { DelegatesPage } from "./features/delegates/DelegatesPage";
 import { TeamPage } from "./features/team/TeamPage";
 import { AccountPage } from "./features/account/AccountPage";
-import { AnalyticsPage } from "./features/analytics/Analyticspage";
+import { AnalyticsPage } from "./features/analytics/AnalyticsPage";
 import { LandingPage } from "./features/landing/LandingPage";
 
 function App() {
