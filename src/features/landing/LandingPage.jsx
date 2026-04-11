@@ -34,7 +34,7 @@ export function LandingPage() {
       {/* Hero */}
       <section className="lp-hero">
         <div className="lp-hero-left">
-          <p className="lp-hero-tag">JKUSA 2026 — Student President</p>
+          <p className="lp-hero-tag">JKUSA 2026 — Academic Affairs Secretary</p>
           <h1 className="lp-hero-name">
             Javas<br />
             <span className="lp-hero-name-gold">Abich</span>
