@@ -158,7 +158,7 @@ export function LandingPage() {
           <Link to="/login" className="lp-nav-cta">Team Login</Link>
         </div>
         <div className="lp-footer-line" />
-        <p className="lp-footer-copy">Campaign HQ · Built for the JKUSA 2026 Student Presidential Campaign</p>
+        <p className="lp-footer-copy">Campaign HQ · Built for the JKUSA 2026 Student Campaign</p>
       </footer>
 
     </div>
