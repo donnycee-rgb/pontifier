@@ -4,105 +4,159 @@ import "./LandingPage.css";
 export function LandingPage() {
   return (
     <div className="lp">
+
       {/* Nav */}
       <nav className="lp-nav">
-        <span className="lp-nav-brand">Campaign<span className="lp-nav-brand-hq">HQ</span></span>
-        <Link to="/login" className="lp-nav-login">Team Login</Link>
+        <span className="lp-nav-brand">Campaign<span className="lp-nav-gold">HQ</span></span>
+        <div className="lp-nav-links">
+          <a href="#about" className="lp-nav-link">About</a>
+          <a href="#pillars" className="lp-nav-link">Manifesto</a>
+          <Link to="/login" className="lp-nav-cta">Team Login</Link>
+        </div>
       </nav>
 
       {/* Hero */}
       <section className="lp-hero">
-        <div className="lp-hero-bg">
-          <div className="lp-hero-grid" />
-          <div className="lp-hero-glow" />
-        </div>
-        <div className="lp-hero-content">
-          <p className="lp-hero-tagline">JKUASU 2026</p>
+        <div className="lp-hero-left">
+          <p className="lp-hero-tag">JKUSA 2026 — Student President</p>
           <h1 className="lp-hero-name">
-            Javas<br />Abich
+            Javas<br />
+            <span className="lp-hero-name-gold">Abich</span>
           </h1>
-          <div className="lp-hero-divider" />
+          <div className="lp-hero-rule" />
           <p className="lp-hero-slogan">Arete in Action</p>
-          <p className="lp-hero-sub">
-            Excellence is not a destination — it is a discipline.<br />
-            A campaign built on integrity, vision, and service to every student.
+          <p className="lp-hero-desc">
+            Excellence is not a privilege for a few — it is a standard every JKUSA
+            student deserves. A campaign built on integrity, vision, and unwavering
+            commitment to every student, every college, every voice.
           </p>
-          <div className="lp-hero-actions">
-            <a
-              href="/manifesto.pdf"
-              download
-              className="lp-btn-primary"
-            >
+          <div className="lp-hero-btns">
+            <a href="/manifesto.pdf" download className="lp-btn-primary">
               Download Manifesto
             </a>
-            <Link to="/login" className="lp-btn-ghost">
+            <Link to="/login" className="lp-btn-outline">
               Campaign Team →
             </Link>
           </div>
         </div>
-        <div className="lp-hero-badge">
-          <span className="lp-hero-badge-text">ARETE</span>
-        </div>
-      </section>
-
-      {/* About */}
-      <section className="lp-about">
-        <div className="lp-about-inner">
-          <div className="lp-about-label">The Candidate</div>
-          <h2 className="lp-about-heading">Built for every student.<br />Not just a few.</h2>
-          <div className="lp-about-grid">
-            <div className="lp-about-text">
-              <p>
-                Javas Abich is a JKUA student leader with a clear-eyed vision for what
-                student governance can be — transparent, accountable, and genuinely
-                student-first.
-              </p>
-              <p>
-                Arete, the Greek ideal of excellence in purpose and action, is not just
-                a tagline. It is the standard this campaign holds itself to — in every
-                policy, every conversation, every commitment made to you.
-              </p>
-            </div>
-            <div className="lp-about-pillars">
-              {[
-                { icon: "◈", title: "Accountability", desc: "Open books. Real reporting. No hidden agendas." },
-                { icon: "◉", title: "Student Welfare", desc: "Healthcare, mental health, and basic needs first." },
-                { icon: "◎", title: "Academic Excellence", desc: "Resources, representation, and results that matter." },
-                { icon: "◆", title: "Unity", desc: "Every college. Every course. Every student." },
-              ].map((p) => (
-                <div key={p.title} className="lp-pillar">
-                  <span className="lp-pillar-icon">{p.icon}</span>
-                  <div>
-                    <h3 className="lp-pillar-title">{p.title}</h3>
-                    <p className="lp-pillar-desc">{p.desc}</p>
-                  </div>
-                </div>
-              ))}
+        <div className="lp-hero-right">
+          <div className="lp-hero-img-wrap">
+            <img src="/images/javas1.jpg" alt="Javas Abich" className="lp-hero-img" />
+            <div className="lp-hero-img-badge">
+              <span className="lp-hero-img-badge-text">ARETE</span>
+              <span className="lp-hero-img-badge-sub">IN ACTION</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Manifesto CTA */}
-      <section className="lp-manifesto">
-        <div className="lp-manifesto-inner">
-          <div className="lp-manifesto-line" />
-          <h2 className="lp-manifesto-heading">Read the full manifesto</h2>
-          <p className="lp-manifesto-sub">
-            Every promise. Every plan. Every commitment — documented and downloadable.
+      {/* Stats bar */}
+      <section className="lp-stats">
+        {[
+          { value: "136+", label: "Registered Delegates" },
+          { value: "5", label: "Colleges Represented" },
+          { value: "2026", label: "Election Year" },
+          { value: "1", label: "Clear Vision" },
+        ].map((s) => (
+          <div key={s.label} className="lp-stat">
+            <span className="lp-stat-value">{s.value}</span>
+            <span className="lp-stat-label">{s.label}</span>
+          </div>
+        ))}
+      </section>
+
+      {/* About */}
+      <section className="lp-about" id="about">
+        <div className="lp-about-img-wrap">
+          <img src="/images/javas2.jpg" alt="Javas Abich campaigning" className="lp-about-img" />
+          <div className="lp-about-img-tag">
+            <span>The Candidate</span>
+          </div>
+        </div>
+        <div className="lp-about-content">
+          <p className="lp-section-tag">Who We Are</p>
+          <h2 className="lp-section-heading">
+            Crafting Excellence<br />
+            <span className="lp-gold">in Every Student</span>
+          </h2>
+          <p className="lp-about-text">
+            Javas Abich is a JKUSA student leader with a clear-eyed vision for what
+            student governance can truly be — transparent, accountable, and genuinely
+            student-first in every decision made.
           </p>
-          <a href="/manifesto.pdf" download className="lp-btn-primary lp-manifesto-btn">
+          <p className="lp-about-text">
+            Arete, the Greek ideal of excellence in purpose and action, is not just
+            a tagline. It is the standard this campaign holds itself to in every
+            policy, every conversation, and every commitment made to you.
+          </p>
+          <a href="/manifesto.pdf" download className="lp-btn-primary lp-about-btn">
+            Read the Full Manifesto
+          </a>
+        </div>
+      </section>
+
+      {/* Pillars */}
+      <section className="lp-pillars" id="pillars">
+        <div className="lp-pillars-header">
+          <p className="lp-section-tag">Our Commitments</p>
+          <h2 className="lp-section-heading">
+            Pillars That <span className="lp-gold">Fit Every Student</span>
+          </h2>
+        </div>
+        <div className="lp-pillars-grid">
+          {[
+            { icon: "◈", title: "Accountability", desc: "Open books, real reporting, and no hidden agendas. Every shilling accounted for." },
+            { icon: "◉", title: "Student Welfare", desc: "Healthcare, mental health support, and basic needs — prioritised, not promised." },
+            { icon: "◎", title: "Academic Excellence", desc: "Resources, representation, and results that actually move the needle." },
+            { icon: "◆", title: "Unity & Inclusion", desc: "Every college. Every course. Every student — represented and heard." },
+            { icon: "◐", title: "Campus Infrastructure", desc: "Safe, functional spaces that support learning, rest, and student life." },
+            { icon: "◑", title: "Leadership Pipeline", desc: "Building the next generation of student leaders from every faculty." },
+          ].map((p) => (
+            <div key={p.title} className="lp-pillar-card">
+              <span className="lp-pillar-icon">{p.icon}</span>
+              <h3 className="lp-pillar-title">{p.title}</h3>
+              <p className="lp-pillar-desc">{p.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Photo CTA */}
+      <section className="lp-cta">
+        <div className="lp-cta-img-wrap">
+          <img src="/images/javas3.jpg" alt="Javas Abich" className="lp-cta-img" />
+          <div className="lp-cta-img-overlay" />
+        </div>
+        <div className="lp-cta-content">
+          <p className="lp-section-tag lp-section-tag--light">The Manifesto</p>
+          <h2 className="lp-cta-heading">
+            Every Promise.<br />Every Plan.<br />Documented.
+          </h2>
+          <p className="lp-cta-desc">
+            No vague commitments. No empty slogans. Download the full manifesto
+            and hold this campaign accountable to every word.
+          </p>
+          <a href="/manifesto.pdf" download className="lp-btn-gold">
             Download PDF
           </a>
-          <div className="lp-manifesto-line" />
         </div>
       </section>
 
       {/* Footer */}
       <footer className="lp-footer">
-        <p className="lp-footer-name">Javas Abich · JKUASU 2026</p>
-        <p className="lp-footer-tag">Arete in Action</p>
+        <div className="lp-footer-inner">
+          <div>
+            <p className="lp-footer-name">Javas Abich</p>
+            <p className="lp-footer-slogan">Arete in Action · JKUSA 2026</p>
+          </div>
+          <Link to="/login" className="lp-nav-cta">Team Login</Link>
+        </div>
+        <div className="lp-footer-line" />
+        <p className="lp-footer-copy">
+          Campaign HQ · Built for the JKUSA 2026 Student Presidential Campaign
+        </p>
       </footer>
+
     </div>
   );
 }
