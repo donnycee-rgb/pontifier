@@ -3,9 +3,12 @@
   align-items: center;
   gap: 1rem;
   padding: 0.75rem 1.25rem;
-  background: #0a1628;
-  border-bottom: 1px solid var(--border);
+  background: #ffffff;
+  border-bottom: 1px solid rgba(10, 22, 40, 0.09);
   min-height: 56px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
 }
 
 @media (min-width: 768px) {
@@ -19,17 +22,17 @@
   align-items: center;
   justify-content: center;
   padding: 0.45rem;
-  background: var(--bg3);
-  border: 1px solid var(--border2);
+  background: #f0f4fb;
+  border: 1px solid rgba(10, 22, 40, 0.12);
   border-radius: var(--radius-input);
-  color: var(--text2);
+  color: #2d4a7a;
   font-size: 1.1rem;
   transition: color 0.15s ease, background 0.15s ease;
 }
 
 .topbar-menu:hover {
-  background: var(--bg3);
-  color: var(--accent);
+  background: #f0f4fb;
+  color: #B8922A;
 }
 
 .topbar-title {
@@ -41,6 +44,6 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  color: var(--accent);
+  color: #B8922A;
   letter-spacing: -0.01em;
 }

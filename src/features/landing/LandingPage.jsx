@@ -1,7 +1,10 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./LandingPage.css";
 
 export function LandingPage() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <div className="lp">
 
@@ -13,7 +16,20 @@ export function LandingPage() {
           <a href="#pillars" className="lp-nav-link">Manifesto</a>
           <Link to="/login" className="lp-nav-cta">Team Login</Link>
         </div>
+        <button className="lp-nav-hamburger" onClick={() => setMenuOpen((o) => !o)} aria-label="Toggle menu">
+          <span className={`lp-ham-line ${menuOpen ? "lp-ham-open-1" : ""}`} />
+          <span className={`lp-ham-line ${menuOpen ? "lp-ham-open-2" : ""}`} />
+          <span className={`lp-ham-line ${menuOpen ? "lp-ham-open-3" : ""}`} />
+        </button>
       </nav>
+
+      {menuOpen && (
+        <div className="lp-mobile-menu">
+          <a href="#about" className="lp-mobile-link" onClick={() => setMenuOpen(false)}>About</a>
+          <a href="#pillars" className="lp-mobile-link" onClick={() => setMenuOpen(false)}>Manifesto</a>
+          <Link to="/login" className="lp-mobile-cta" onClick={() => setMenuOpen(false)}>Team Login</Link>
+        </div>
+      )}
 
       {/* Hero */}
       <section className="lp-hero">
@@ -31,12 +47,8 @@ export function LandingPage() {
             commitment to every student, every college, every voice.
           </p>
           <div className="lp-hero-btns">
-            <a href="/manifesto.pdf" download className="lp-btn-primary">
-              Download Manifesto
-            </a>
-            <Link to="/login" className="lp-btn-outline">
-              Campaign Team →
-            </Link>
+            <a href="/manifesto.pdf" download className="lp-btn-primary">Download Manifesto</a>
+            <Link to="/login" className="lp-btn-outline">Campaign Team →</Link>
           </div>
         </div>
         <div className="lp-hero-right">
@@ -69,9 +81,7 @@ export function LandingPage() {
       <section className="lp-about" id="about">
         <div className="lp-about-img-wrap">
           <img src="/images/javas2.jpg" alt="Javas Abich campaigning" className="lp-about-img" />
-          <div className="lp-about-img-tag">
-            <span>The Candidate</span>
-          </div>
+          <div className="lp-about-img-tag"><span>The Candidate</span></div>
         </div>
         <div className="lp-about-content">
           <p className="lp-section-tag">Who We Are</p>
@@ -89,9 +99,7 @@ export function LandingPage() {
             a tagline. It is the standard this campaign holds itself to in every
             policy, every conversation, and every commitment made to you.
           </p>
-          <a href="/manifesto.pdf" download className="lp-btn-primary lp-about-btn">
-            Read the Full Manifesto
-          </a>
+          <a href="/manifesto.pdf" download className="lp-btn-primary lp-about-btn">Read the Full Manifesto</a>
         </div>
       </section>
 
@@ -99,9 +107,7 @@ export function LandingPage() {
       <section className="lp-pillars" id="pillars">
         <div className="lp-pillars-header">
           <p className="lp-section-tag">Our Commitments</p>
-          <h2 className="lp-section-heading">
-            Pillars That <span className="lp-gold">Fit Every Student</span>
-          </h2>
+          <h2 className="lp-section-heading">Pillars That <span className="lp-gold">Fit Every Student</span></h2>
         </div>
         <div className="lp-pillars-grid">
           {[
@@ -121,24 +127,24 @@ export function LandingPage() {
         </div>
       </section>
 
-      {/* Photo CTA */}
+      {/* CTA with creative image treatment */}
       <section className="lp-cta">
         <div className="lp-cta-img-wrap">
           <img src="/images/javas3.jpg" alt="Javas Abich" className="lp-cta-img" />
           <div className="lp-cta-img-overlay" />
+          <div className="lp-cta-img-quote">
+            <span className="lp-cta-quote-mark">"</span>
+            <p className="lp-cta-quote-text">Excellence is a discipline,<br />not a destination.</p>
+          </div>
         </div>
         <div className="lp-cta-content">
           <p className="lp-section-tag lp-section-tag--light">The Manifesto</p>
-          <h2 className="lp-cta-heading">
-            Every Promise.<br />Every Plan.<br />Documented.
-          </h2>
+          <h2 className="lp-cta-heading">Every Promise.<br />Every Plan.<br />Documented.</h2>
           <p className="lp-cta-desc">
             No vague commitments. No empty slogans. Download the full manifesto
             and hold this campaign accountable to every word.
           </p>
-          <a href="/manifesto.pdf" download className="lp-btn-gold">
-            Download PDF
-          </a>
+          <a href="/manifesto.pdf" download className="lp-btn-gold">Download PDF</a>
         </div>
       </section>
 
@@ -152,9 +158,7 @@ export function LandingPage() {
           <Link to="/login" className="lp-nav-cta">Team Login</Link>
         </div>
         <div className="lp-footer-line" />
-        <p className="lp-footer-copy">
-          Campaign HQ · Built for the JKUSA 2026 Student Presidential Campaign
-        </p>
+        <p className="lp-footer-copy">Campaign HQ · Built for the JKUSA 2026 Student Presidential Campaign</p>
       </footer>
 
     </div>
