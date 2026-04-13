@@ -10,7 +10,7 @@ export function LandingPage() {
 
       {/* Nav */}
       <nav className="lp-nav">
-        <span className="lp-nav-brand">Campaign<span className="lp-nav-gold">HQ</span></span>
+        <span className="lp-nav-brand">Pontifex<span className="lp-nav-gold"> · Arete in Action</span></span>
         <div className="lp-nav-links">
           <a href="#about" className="lp-nav-link">About</a>
           <a href="#pillars" className="lp-nav-link">Manifesto</a>
@@ -34,7 +34,7 @@ export function LandingPage() {
       {/* Hero */}
       <section className="lp-hero">
         <div className="lp-hero-left">
-          <p className="lp-hero-tag">JKUSA 2026 — Academic Affairs Secretary</p>
+          <p className="lp-hero-tag">JKUASU 2026 — Academic Affairs Secretary</p>
           <h1 className="lp-hero-name">
             Javas<br />
             <span className="lp-hero-name-gold">Abich</span>
@@ -42,7 +42,7 @@ export function LandingPage() {
           <div className="lp-hero-rule" />
           <p className="lp-hero-slogan">Arete in Action</p>
           <p className="lp-hero-desc">
-            Excellence is not a privilege for a few — it is a standard every JKUSA
+            Excellence is not a privilege for a few — it is a standard every JKUASU
             student deserves. A campaign built on integrity, vision, and unwavering
             commitment to every student, every college, every voice.
           </p>
@@ -53,7 +53,7 @@ export function LandingPage() {
         </div>
         <div className="lp-hero-right">
           <div className="lp-hero-img-wrap">
-            <img src="/images/javas1.jpg" alt="Javas Abich" className="lp-hero-img" />
+            <img src="/images/javas1.jpg" alt="Javas Abich — JKUASU 2026 Academic Secretary candidate" className="lp-hero-img" />
             <div className="lp-hero-img-badge">
               <span className="lp-hero-img-badge-text">ARETE</span>
               <span className="lp-hero-img-badge-sub">IN ACTION</span>
@@ -63,7 +63,7 @@ export function LandingPage() {
       </section>
 
       {/* Stats bar */}
-      <section className="lp-stats">
+      <section className="lp-stats" aria-label="Campaign statistics">
         {[
           { value: "136+", label: "Registered Delegates" },
           { value: "5", label: "Colleges Represented" },
@@ -78,19 +78,19 @@ export function LandingPage() {
       </section>
 
       {/* About */}
-      <section className="lp-about" id="about">
+      <section className="lp-about" id="about" aria-labelledby="about-heading">
         <div className="lp-about-img-wrap">
-          <img src="/images/javas2.jpg" alt="Javas Abich campaigning" className="lp-about-img" />
+          <img src="/images/javas2.jpg" alt="Javas Abich at a JKUASU campus event" className="lp-about-img" />
           <div className="lp-about-img-tag"><span>The Candidate</span></div>
         </div>
         <div className="lp-about-content">
           <p className="lp-section-tag">Who We Are</p>
-          <h2 className="lp-section-heading">
+          <h2 id="about-heading" className="lp-section-heading">
             Crafting Excellence<br />
             <span className="lp-gold">in Every Student</span>
           </h2>
           <p className="lp-about-text">
-            Javas Abich is a JKUSA student leader with a clear-eyed vision for what
+            Javas Abich is a JKUASU student leader with a clear-eyed vision for what
             student governance can truly be — transparent, accountable, and genuinely
             student-first in every decision made.
           </p>
@@ -104,10 +104,12 @@ export function LandingPage() {
       </section>
 
       {/* Pillars */}
-      <section className="lp-pillars" id="pillars">
+      <section className="lp-pillars" id="pillars" aria-labelledby="pillars-heading">
         <div className="lp-pillars-header">
           <p className="lp-section-tag">Our Commitments</p>
-          <h2 className="lp-section-heading">Pillars That <span className="lp-gold">Fit Every Student</span></h2>
+          <h2 id="pillars-heading" className="lp-section-heading">
+            Pillars That <span className="lp-gold">Fit Every Student</span>
+          </h2>
         </div>
         <div className="lp-pillars-grid">
           {[
@@ -119,7 +121,7 @@ export function LandingPage() {
             { icon: "◑", title: "Leadership Pipeline", desc: "Building the next generation of student leaders from every faculty." },
           ].map((p) => (
             <div key={p.title} className="lp-pillar-card">
-              <span className="lp-pillar-icon">{p.icon}</span>
+              <span className="lp-pillar-icon" aria-hidden="true">{p.icon}</span>
               <h3 className="lp-pillar-title">{p.title}</h3>
               <p className="lp-pillar-desc">{p.desc}</p>
             </div>
@@ -127,19 +129,19 @@ export function LandingPage() {
         </div>
       </section>
 
-      {/* CTA with creative image treatment */}
-      <section className="lp-cta">
+      {/* CTA */}
+      <section className="lp-cta" aria-labelledby="cta-heading">
         <div className="lp-cta-img-wrap">
-          <img src="/images/javas3.jpg" alt="Javas Abich" className="lp-cta-img" />
+          <img src="/images/javas3.jpg" alt="Javas Abich — Arete in Action" className="lp-cta-img" />
           <div className="lp-cta-img-overlay" />
           <div className="lp-cta-img-quote">
-            <span className="lp-cta-quote-mark">"</span>
+            <span className="lp-cta-quote-mark" aria-hidden="true">"</span>
             <p className="lp-cta-quote-text">Excellence is a discipline,<br />not a destination.</p>
           </div>
         </div>
         <div className="lp-cta-content">
           <p className="lp-section-tag lp-section-tag--light">The Manifesto</p>
-          <h2 className="lp-cta-heading">Every Promise.<br />Every Plan.<br />Documented.</h2>
+          <h2 id="cta-heading" className="lp-cta-heading">Every Promise.<br />Every Plan.<br />Documented.</h2>
           <p className="lp-cta-desc">
             No vague commitments. No empty slogans. Download the full manifesto
             and hold this campaign accountable to every word.
@@ -153,12 +155,12 @@ export function LandingPage() {
         <div className="lp-footer-inner">
           <div>
             <p className="lp-footer-name">Javas Abich</p>
-            <p className="lp-footer-slogan">Arete in Action · JKUSA 2026</p>
+            <p className="lp-footer-slogan">Arete in Action · JKUASU 2026 Academic Affairs Secretary</p>
           </div>
           <Link to="/login" className="lp-nav-cta">Team Login</Link>
         </div>
         <div className="lp-footer-line" />
-        <p className="lp-footer-copy">Campaign HQ · Built for the JKUSA 2026 Student Campaign</p>
+        <p className="lp-footer-copy">Pontifex Campaign HQ · JKUASU 2026 Student Election</p>
       </footer>
 
     </div>
