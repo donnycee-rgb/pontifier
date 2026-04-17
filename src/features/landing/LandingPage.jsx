@@ -81,7 +81,7 @@ export function LandingPage() {
           <div className="lp-hero-overlay" />
         </div>
         <div className={`lp-hero-content ${heroInView ? "lp-fade-up" : "lp-hidden"}`}>
-          <p className="lp-hero-tag">JKUASU 2026 · Academic Affairs Secretary</p>
+          <p className="lp-hero-tag">JKUSA 2026 · Academic Affairs Secretary</p>
           <h1 className="lp-hero-name">
             Thank<br />
             <span className="lp-hero-name-gold">You.</span>
@@ -151,7 +151,7 @@ export function LandingPage() {
           />
           <div className="lp-gratitude-img-caption">
             <span>The Candidate</span>
-            <span className="lp-gratitude-img-caption-sub">JKUASU 2026</span>
+            <span className="lp-gratitude-img-caption-sub">JKUSA 2026</span>
           </div>
         </div>
       </section>
@@ -243,13 +243,13 @@ export function LandingPage() {
         <div className="lp-footer-inner">
           <div>
             <p className="lp-footer-name">Javas Abich</p>
-            <p className="lp-footer-slogan">Arete in Action · JKUASU 2026</p>
+            <p className="lp-footer-slogan">Arete in Action · JKUSA 2026</p>
           </div>
           <Link to="/login" className="lp-nav-cta">Team Login</Link>
         </div>
         <div className="lp-footer-line" />
         <p className="lp-footer-copy">
-          Pontifex Campaign HQ · JKUASU 2026 Student Election · Thank you.
+          Pontifex Campaign HQ · JKUSA 2026 Student Election · Thank you.
         </p>
       </footer>
 

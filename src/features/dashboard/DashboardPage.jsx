@@ -63,7 +63,7 @@ export function DashboardPage() {
     <div className="dashboard-page">
       <h1 className="page-title">Admin dashboard</h1>
       <p className="page-sub">
-        JKUASU 2026 campaign overview · {user?.name} · Arete in Action
+        JKUSA 2026 campaign overview · {user?.name} · Arete in Action
       </p>
 
       {error ? <p className="login-error">{error}</p> : null}

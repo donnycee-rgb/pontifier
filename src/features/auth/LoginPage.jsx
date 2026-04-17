@@ -96,7 +96,7 @@ export function LoginPage() {
           </form>
 
           <p className="login-hint mono">
-            JKUASU 2026 · Seeded admin: admin@campaign.com (password in server seed.sql)
+            JKUSA 2026 · Seeded admin: admin@campaign.com (password in server seed.sql)
           </p>
         </div>
       </div>
